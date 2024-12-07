@@ -69,10 +69,10 @@ def getIP():
                     exit()
                 else:
                     if python_version[0] == "3":
-                        ip = input("Please enter your Wii's IP address "
+                        ip = input("Please enter your Wii/wiiu's IP address "
                                             "(i.e. 192.168.1.123): ")
                     else:
-                        ip =  + raw_input("Please enter your Wii's IP address "
+                        ip =  + raw_input("Please enter your Wii/wiiu's IP address "
                                                 "(i.e. 192.168.1.123): ")
     else:
         ip = "tcp:" + ip
@@ -89,7 +89,7 @@ def getFile(path):
         exit()
 
     if os.path.isdir(path):
-        print("PyWiiLoad can't send a directory.  Only executables (.dol/.elf)"
+        print("PyWiiLoad can't send a directory.  Only executables (.dol/.elf/.rpx/.wuhb)"
               " and zip archives.")
         zip_or_not = "i"
         while zip_or_not.lower() not in ["y", "yes", "n", "no"]:
@@ -108,7 +108,7 @@ def getFile(path):
         file = path
         ext = os.path.splitext(file)
         if ext[1] not in [".dol", ".elf", ".zip"]:
-            print("File type is not supported.  Must be .dol, .elf, or "
+            print("File type is not supported.  Must be .dol, .elf, .rpx, .wuhb, or "
                   ".zip.")
             exit()
 
