@@ -107,8 +107,8 @@ def getFile(path):
     else:
         file = path
         ext = os.path.splitext(file)
-        if ext[1] not in [".dol", ".elf", ".zip"]:
-            print("File type is not supported.  Must be .dol, .elf, .rpx, .wuhb, or "
+        if ext[1] not in [".dol", ".elf", ".zip", ".rpx", ".wuhb"]:
+            print("File type is not supported.  Must be .dol, .elf, .rpx, .wuhb, or"
                   ".zip.")
             exit()
 
