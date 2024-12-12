@@ -235,7 +235,7 @@ of the GPLv3+.\n""")
     send(chunks, conn, args)
 
     # Print a parting message.             mmmmmmm
-    print("\nDone.\n\nThank you for using PyWiiLoad!")
+    print("\nDone!\n\nThank you for using PyWiiLoad!")
 
 
 if __name__ == "__main__":
