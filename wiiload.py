@@ -44,7 +44,7 @@ WIILOAD_VERSION_MINOR = 5
 # Get the version of Python this program is running under.
 python_version = platform.python_version_tuple()
 
-def getIP():
+def wiiload_getip():
     """Obtain the Wii's IP address from the $WIILOAD environment variable.
 
     """
@@ -80,7 +80,7 @@ def getIP():
     return ip
 
 
-def getFile(path):
+def wiiload_getfile(path):
     """Make sure it's possible to send the file/dir that the user provides.
 
     """
@@ -115,7 +115,7 @@ def getFile(path):
     return file
 
 
-def connect(ip_string, wii_ip, args, c_data, file):
+def wiiload_connect(ip_string, wii_ip, args, c_data, file):
     """Connect to the Wii.
 
     """
@@ -145,7 +145,7 @@ def connect(ip_string, wii_ip, args, c_data, file):
     return conn
 
 
-def send(chunks, conn, args):
+def wiiload_send(chunks, conn, args):
     """Send the file.
 
     """
@@ -167,7 +167,7 @@ def send(chunks, conn, args):
     conn.close()
 
 
-def zip(path):
+def wiiload_zip(path):
     """Create a .zip archive if the user wants to send a directory.
 
     """
@@ -213,8 +213,8 @@ and you are welcome to use, modify, and redistribute it under the terms
 of the GPLv3+.\n""")
 
     # Get the Wii's IP address and the file to send.
-    ip_string = getIP()
-    file = getFile(sys.argv[1])
+    ip_string = wiiload_getip()
+    file = wiiload_getfile(sys.argv[1])
 
     wii_ip = (ip_string[4:], 4299)
 
@@ -231,8 +231,8 @@ of the GPLv3+.\n""")
     args = "\x00".join(args) + "\x00"
 
     # Connect to the Wii and send the file.
-    conn = connect(ip_string, wii_ip, args, c_data, file)
-    send(chunks, conn, args)
+    conn = wiiload_connect(ip_string, wii_ip, args, c_data, file)
+    wiiload_send(chunks, conn, args)
 
     # Print a parting message.             mmmmmmm
     print("\nDone!\n\nThank you for using PyWiiLoad!")
