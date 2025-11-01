@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-"""PyWiiLoad Copyright (C) 2012 Bryan Cuneo, Modified 2025 
+"""PyWiiLoad Copyright (C) 2012 Bryan Cuneo, Modified 2025 by Cody Shimizu (KokiKitsune2007)
   This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
