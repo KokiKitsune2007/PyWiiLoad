@@ -61,9 +61,6 @@ def wiiload_getip():
                 if python_version[0] == "3":
                     set_ip = input("$WII is not set. Would you like to set it "
                                    "temporarily? [y/n]: ")
-                else:
-                    set_ip = raw_input("WIILOAD is not set. Would you like to "
-                                       "set it temporarily+ [y/n]: ")
                 if set_ip.lower() in ["n", "no"]:
                     print("\nGoodbye.")
                     exit()
@@ -71,9 +68,6 @@ def wiiload_getip():
                     if python_version[0] == "3":
                         ip = input("Please enter your Wii/wiiu's IP address "
                                             "(i.e. 192.168.1.123): ")
-                    else:
-                        ip =  + raw_input("Please enter your Wii/wiiu's IP address "
-                                                "(i.e. 192.168.1.123): ")
     else:
         ip = "tcp:" + ip
 
@@ -96,9 +90,6 @@ def wiiload_getfile(path):
             if python_version[0] == "3":
                 zip_or_not = input("Would you like to zip this directory and "
                                    "send it? [y/n]: ")
-            else:
-                zip_or_not = raw_input("Would you like to zip this directory "
-                                       "and send it? [y/n]: ")
             if zip_or_not.lower() in ["n", "no"]:
                 print("\nGoodbye.")
                 exit()
